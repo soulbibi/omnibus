@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>omnibus</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="responsive data tables">
+<meta name="author" content="YOUNGUK JO">
+
+<style type="text/css">
+body{color:#000;font-size:14px;}
+table{border-collapse:collapse;border-spacing:0}
+.tb-lst{width:100%;}
+.tb-lst th,.tb-lst td{padding:5px;border:1px solid #ddd;color:#000;font-size:14px;text-align:center;}
+.tb-lst th{width:12%;background-color:#eee}
+.tb-lst .w1{width:4%;}
+@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table, thead, tbody, th, td, tr {display: block;}
+	.tb-lst thead tr{position: absolute;top: -9999px;left: -9999px;}
+	.tb-lst tr{border-bottom: 2px solid #ddd;}
+	.tb-lst td{border: none;border-top: 1px solid #ddd;position: relative;padding-left: 35%;text-align:left;}
+	.tb-lst td:before {position: absolute;top: 0;left: 0px;width: 30%;padding:5px 0;white-space: nowrap;font-weight:bold;text-align:center;background-color:#eee;}
+	
+	/* Label the data */
+	td:nth-of-type(1):before { content: "번호"; }
+	td:nth-of-type(2):before { content: "이름"; }
+	td:nth-of-type(3):before { content: "구분"; }
+	td:nth-of-type(4):before { content: "기간"; }
+	td:nth-of-type(5):before { content: "작성일"; }
+	td:nth-of-type(6):before { content: "연락처"; }
+	td:nth-of-type(7):before { content: "생일"; }
+	td:nth-of-type(8):before { content: "날짜"; }
+	td:nth-of-type(9):before { content: "직업"; }
+	td:nth-of-type(10):before { content: "취미"; }
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+	
+<table class="tb-lst">
+	<thead>
+	<tr>
+		<th class="w1">번호</th>
+		<th>이름</th>
+		<th class="w1">구분</th>
+		<th>기간</th>
+		<th>작성일</th>
+		<th>연락처</th>
+		<th>생일</th>
+		<th>날짜</th>
+		<th>직업</th>
+		<th>취미</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>00</td>
+		<td>홍길동</td>
+		<td>인강</td>
+		<td>2014.00.00 ~ 2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>010-0000-0000</td>
+		<td>2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>프로그래머</td>
+		<td>등산</td>
+	</tr>
+	<tr>
+		<td>01</td>
+		<td>가나다</td>
+		<td>인강</td>
+		<td>2014.00.00 ~ 2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>010-0000-0000</td>
+		<td>2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>시스템 엔지니어</td>
+		<td>웹서핑</td>
+	</tr>
+	<tr>
+		<td>02</td>
+		<td>홍길동</td>
+		<td>인강</td>
+		<td>2014.00.00 ~ 2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>010-0000-0000</td>
+		<td>2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>프로그래머</td>
+		<td>등산</td>
+	</tr>
+	<tr>
+		<td>03</td>
+		<td>홍길동</td>
+		<td>인강</td>
+		<td>2014.00.00 ~ 2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>010-0000-0000</td>
+		<td>2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>시스템 엔지니어</td>
+		<td>웹서핑</td>
+	</tr>
+	<tr>
+		<td>04</td>
+		<td>홍길동</td>
+		<td>인강</td>
+		<td>2014.00.00 ~ 2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>010-0000-0000</td>
+		<td>2014.00.00</td>
+		<td>2014.00.00</td>
+		<td>프로그래머</td>
+		<td>등산</td>
+	</tr>
+	</tbody>
+</table>
+		
+
+</div>
+</body>
+</html>
+

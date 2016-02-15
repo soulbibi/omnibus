@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>omnibus</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="checkbox, radio button 디자인 바꾸기">
+<meta name="author" content="YOUNGUK JO">
+	
+<style type="text/css">
+body{color:#000;font-size:14px;}
+a{color:#000;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.bx{padding:10px;}
+
+label{display:inline-block;height: 22px;margin-right:10px;cursor: pointer;}
+input[type="checkbox"]{display:none;}
+input[type="checkbox"] + div.chk{display:inline-block;width:20px;height:20px;border:1px solid #ddd;border-radius:4px;cursor:pointer;vertical-align:middle;}
+input[type="checkbox"]:checked + div.chk:after {content: '\2714';font-size: 18px;color:#ff0000;}
+
+input[type="radio"]{display:none;}
+input[type="radio"] + div.rd{display:inline-block;width:20px;height:20px;border:1px solid #ddd;background-color:#eee;border-radius:10px;cursor:pointer;vertical-align:middle;}
+input[type="radio"]:checked + div.rd em{display:inline-block;margin:4px;width:12px;height:12px;background-color:#666;border-radius:8px}
+
+</style>
+</head>
+
+<body>
+	<div class="bx">
+		<label for="chkYes">
+			<input type="checkbox" id="chkYes" name="agree">
+			<div class="chk"></div>
+			이메일 수신동의
+		</label>
+		<label for="chkNo">
+			<input type="checkbox" id="chkNo" name="agree">
+			<div class="chk"></div>
+			이메일 수신동의
+		</label>
+	</div>
+	<div class="bx">
+		<label for="rdYes">
+			<input type="radio" id="rdYes" name="agree">
+			<div class="rd"><em></em></div>
+			동의
+		</label>
+		<label for="rdNo">
+			<input type="radio" id="rdNo" name="agree">
+			<div class="rd"><em></em></div>
+			동의하지 않음
+		</label>
+	</div>
+</body>
+</html>
+
+
+</body>
+</html>
