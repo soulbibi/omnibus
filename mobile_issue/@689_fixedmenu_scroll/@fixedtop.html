@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>omnibus</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="fixed menu, iOS버그">
+<meta name="author" content="YOUNGUK JO">
+<link rel="stylesheet" type="text/css" href="./css/reset.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<style type="text/css">
+body.fxscroll{position:relative;}
+body.fxscroll:after{content: '.'} /* iOS 키패드 올라오지 않는(button,checkbox,등)경우 위치 제대로 못잡는 부분 꽁수*/
+body.fxscroll .gnb{position:absolute;}
+
+h2{text-align:center;font-size:14px;padding:20px 0 10px;}
+
+.gnb{position:fixed;z-index:999;top:0px;left:0;width:100%;}
+.gnb ul{display:table;width:100%;height:38px;background-color:#653a78;}
+.gnb li{display:table-cell;vertical-align:middle;width:25%;border-left:1px solid #7e4d91;border-right:1px solid #401e50;text-align:center;}
+.gnb li:first-child{border-left:0;}
+.gnb li a{display:block;display:block;width:100%;height:26px;padding-top:12px;color:#fff;text-decoration:none;font-size:11px;}
+.gnb li a.on{color:#f9e899;
+-moz-box-shadow:inset 22px 1px 30px rgba(43,18,57,0.5),inset -22px 1px 30px rgba(43,18,57,0.5);
+-webkit-box-shadow:inset 22px 1px 30px rgba(43,18,57,0.5),inset -22px 1px 30px rgba(43,18,57,0.5);
+box-shadow:inset 22px 1px 30px rgba(43,18,57,0.5),inset -22px 1px 30px rgba(43,18,57,0.5);
+}
+
+.content{padding:38px 10px 0;}
+
+.frm{padding:0 10px;padding:30px 0;}
+.frm button{width:179px;height:35px;}
+.frm span{display:block;margin-bottom:5px;border:1px solid #B5B5B5;padding:0 5px;}
+.frm input[type]:not([type="checkbox"]){border:0;width:100%;height:33px;background:#fff url(./img/bg_textbox.gif) no-repeat 0 11px;color:#656565;margin-right:8px;line-height:33px;}
+.frm .pw input[type]:not([type="checkbox"]){background-position:0 -45px;}
+.frm input[type]:not([type="checkbox"]).on{background-image:none;}
+select{border:1px solid #B5B5B5;width:100%;height:30px;}
+textarea{border:1px solid #B5B5B5;width:100%;height:80px;}
+
+</style>
+
+</head>
+<body>
+<div class="gnb">
+	<ul>
+		<li><a href="#" class="on">메뉴1</a></li>
+		<li><a href="#">메뉴2</a></li>
+		<li><a href="#">메뉴3</a></li>
+		<li><a href="#">메뉴4</a></li>
+	</ul>
+</div>
+
+<div class="content">
+
+	<div>
+		<h2>문제발생</h2>
+		모바일에서 상단 또는 하단 메뉴 고정된 UI구조인 경우<br>
+		콘텐츠에 입력필드 있을 경우 터치하면 가상키보드가 올라가면서 floating된 메뉴의 위치값이 제대로 안잡힘.<br>
+		<br>
+		가상키보드 입력후 완료를 누르면 다시 제 위치로 돌아감. (iOS7.0.X 확인 )<br>
+		아이폰, 안드로이드 버전별 버그현상은 불명확함.<br>
+<br>
+		<h2>해결방법</h2>
+		body는 relative로, floating된 메뉴의 css를 absolute로 변경해줌.<br>
+		상단 메뉴 고정일 경우는 필요에 따라 scrollTop(0) 추가.
+	</div>
+
+	<div class="frm">
+		<fieldset>
+			<legend>로그인영역</legend>
+			<span class="id"><input type="text" class="ipt" onFocus="inputFocus(this);" onBlur="inputBlur(this);"></span>
+			<span class="pw"><input type="password" class="ipt" onFocus="inputFocus(this);" onBlur="inputBlur(this);"></span>
+			<label for="idSave"><input type="checkbox" id="idSave">체크박스</label> 
+			<button type="submit">연결하기</button>
+		<fieldset>
+	</div>
+	<div class="frm">
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+	</div>
+	<div class="frm">
+		<select name="" id="" >
+			<option value="">선택1</option>
+			<option value="">선택2</option>
+			<option value="">선택3</option>
+			<option value="">선택4</option>
+		</select>
+		<label for="idSelect"><input type="checkbox" id="idSelect">라디오버튼</label> 
+	</div>
+</div>
+
+
+<script type="text/javascript">
+// Focus
+function inputFocus(_input){
+	_input.className = "on";
+}
+// Blur
+function inputBlur(_input){	
+	if(_input.value == ""){//값이 없을 때 실행
+		_input.className = "";
+	}
+}
+</script>
+
+<script type="text/javascript">
+$(function() {
+	$('input,textarea,select').on('focus', function(){
+		$('body').addClass('fxscroll');
+		// $(window).scrollTop(0) 필요에 따라 추가
+	})
+	.on('blur', function(){
+		$('body').removeClass('fxscroll');
+	});
+
+});
+</script>
+
+</body>
+</html>
