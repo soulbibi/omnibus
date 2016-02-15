@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>Mobile Info</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="http://m.bdtong.co.kr/css/reset.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- css -->
+<style style="text/css">
+.list{width:100%}
+.list li{overflow:hidden;padding:4px;border-bottom:1px solid #d9d9d9;font-size:14px}
+.list li strong{float:left;width:50%}
+.list li span{float:left;width:50%;text-align:right}
+</style>
+</head>
+
+<body>
+	<ul class="list">
+		<li><strong>Window Size</strong><span id="winsize"></span></li>
+		<li><strong>Device-Width</strong><span id="screensize"></span></li>
+		<li><strong>devicePixelRatio</strong><span id="pixelratio"></span></li>
+		<li><strong>Resolution</strong><span id="resolution"></span></li>
+		<li><strong>Pixel Depth</strong><span id="pixeldepth"></span></li>
+		<li><strong>Touch Support</strong><span id="touchsupport"></span></li>
+	</ul>
+</body>
+<script>
+(function() {
+	var $w = $(window);
+	var $supporttouch = ('ontouchend' in document.documentElement);
+
+		$('#winsize').html( $w.width() + 'x' + $w.height() );
+
+		$w.on( 'resize', function() {
+			$('#winsize').html( $w.width() + 'x' + $w.height() );
+		});
+		$('#screensize').html( screen.width + 'x' + screen.height); // device-width
+		$('#pixelratio').html( window.devicePixelRatio ); // devicePixelRatio = physical pixels / dips,  px=dp*(dpi/160)
+		$('#resolution').html( screen.width * window.devicePixelRatio + 'x' + screen.height * window.devicePixelRatio );
+		$('#pixeldepth').html( screen.pixelDepth + 'bits per pixel');
+		$('#touchsupport').text( $supporttouch );		
+})();
+</script>
+</html>
