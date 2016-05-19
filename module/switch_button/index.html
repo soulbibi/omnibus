@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>Animation Buttons</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<!-- css -->
+<style style="text/css">
+html{font-size:13px}
+h2{padding:30px 0 15px;font-size:18px;font-weight:bold;text-align:center;color:#000bb9}
+h3{padding:15px 0;font-size:16px;font-weight:bold;text-align:center;color:#000bb9}
+.des{padding:0 10px}
+.des ul{max-width:640px;margin:0 auto 20px;padding:10px;border:1px solid #ddd;border-radius:3px;color:#000bb9}
+.des li:before{content: '∙ '}
+.des li{text-indent:-10px;padding-left:10px}
+
+.btn_switch{text-align:center;}
+/* buttons style */
+.btn_01{position:relative;display:inline-block;width:83px;height:28px;border:1px solid #959595;border-radius:15px;box-shadow: inset 0 1px 2px #bfbfbf;	
+	background: rgb(227,227,227);
+	background: -moz-linear-gradient(top,  rgba(227,227,227,1) 0%, rgba(252,252,252,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(227,227,227,1) 0%,rgba(252,252,252,1) 100%);
+	background: linear-gradient(to bottom,  rgba(227,227,227,1) 0%,rgba(252,252,252,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#fcfcfc',GradientType=0 );
+}
+.btn_01 .chk{position:absolute;top:0;left:0;opacity:0}
+.btn_01 .btn{display:block;width:83px;height:28px;}
+.btn_01 .chk:checked ~ .btn{position:absolute;top:-1px;left:-1px;border:1px solid #f04114;border-radius:14px;box-shadow: inset 0 1px 3px #fa5a1c;
+	background: rgb(255,115,33);
+	background: -moz-linear-gradient(top,  rgba(255,115,33,1) 0%, rgba(255,112,27,1) 50%, rgba(255,160,102,1) 52%, rgba(255,160,102,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(255,115,33,1) 0%,rgba(255,112,27,1) 50%,rgba(255,160,102,1) 52%,rgba(255,160,102,1) 100%);
+	background: linear-gradient(to bottom,  rgba(255,115,33,1) 0%,rgba(255,112,27,1) 50%,rgba(255,160,102,1) 52%,rgba(255,160,102,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7321', endColorstr='#ffa066',GradientType=0 );
+}
+
+.btn_01 .btn:before{position:absolute;top:6px;right:17px;content: attr(data-off);text-transform: uppercase;color:#888;font-size:16px;font-weight:bold;}
+.btn_01 .btn:after{position:absolute;top:6px;left:24px;content: attr(data-on);text-transform: uppercase;color:#fff;font-size:16px;font-weight:bold;opacity:0}
+.btn_01 .chk:checked ~ .btn:before{opacity:0}
+.btn_01 .chk:checked ~ .btn:after{opacity:1}
+
+
+.btn_01 .handle{position:absolute;top:-1px;left:-1px;width:28px;height:28px;border:1px solid #959595;border-radius:15px;box-shadow: inset 1px 2px 2px #fff,inset -1px 2px 2px #fff;
+	background: rgb(227,227,227);
+	background: -moz-linear-gradient(top,  rgba(227,227,227,1) 0%, rgba(252,252,252,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(227,227,227,1) 0%,rgba(252,252,252,1) 100%);
+	background: linear-gradient(to bottom,  rgba(227,227,227,1) 0%,rgba(252,252,252,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#fcfcfc',GradientType=0 );
+}
+.btn_01 .chk:checked ~ .handle{left:56px;border:1px solid #f9520f;}
+.btn_01 .btn:after,.btn_switch .handle{
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+/* button style 2 */
+.btn_02{position:relative;display:inline-block;}
+.btn_02 .chk{position:absolute;top:0;left:0;opacity:0}
+.btn_02 .btn{display:block;width:85px;height:30px;background: url(./img/btn_switch_off.png) no-repeat;}
+.btn_02 .chk:checked ~ .btn{width:85px;height:30px;background: url(./img/btn_switch_on.png) no-repeat;}
+.btn_02 .btn{
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Animation Buttons</h2>
+<div class="btn_switch">
+	<label class="btn_01">
+		<input class="chk" type="checkbox">
+		<span class="btn" data-on="On" data-off="Off"></span> 
+		<span class="handle"></span> 
+	</label>
+
+	<label class="btn_02">
+		<input class="chk" type="checkbox">
+		<span class="btn on" data-on="On" data-off="Off"></span>
+	</label>	
+</div>
+
+
+</body>
+</html>

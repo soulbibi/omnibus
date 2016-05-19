@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>Tab Menu</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<script type="text/javascript" src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../js/common_ui.js"></script>
+<!-- css -->
+<style style="text/css">
+html{font-size:13px}
+h2{padding:30px 0 15px;font-size:18px;font-weight:bold;text-align:center;color:#000bb9;}
+.des{padding:0 10px}
+.des ul{max-width:640px;margin:0 auto 20px;padding:10px;border:1px solid #ddd;border-radius:3px;color:#000bb9}
+.des li{text-indent:-10px;padding-left:10px}
+.des li:before{content: '∙ '}
+/* tabmenu style */
+.tabmenu .menu{display:table;width:100%}
+.tabmenu .menu li{display:table-cell;width:25%;height:58px;background-color:#b3b3b3;font-weight:bold;color:#e5e5e5;text-align:center;vertical-align:middle;cursor:pointer}
+.tabmenu .menu li.on{background-color:#fff;border-top:2px solid #333;color:#333}
+.tabmenu .cont{display:none;padding:16px 20px}
+
+</style>
+</head>
+
+<body>
+<h2>Tab Menu</h2>
+<div class="des">
+	<ul>
+		<li>touch event &amp; click event 사용</li>
+	</ul>	
+</div>
+
+<div class="tabmenu">
+	<ul class="menu">
+		<li><span role="button">menu_1</span></li>
+		<li><span role="button">menu_2</span></li>
+		<li><span role="button">menu_3</span></li>
+		<li><span role="button">menu_4</span></li>
+	</ul>
+
+	<div class="cont">
+		menu_1 <br>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+	</div>
+
+	<div class="cont">
+		menu_2 <br>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur consequatur aliquid eveniet id deserunt suscipit, culpa sit perspiciatis ex placeat error blanditiis repellat adipisci omnis enim iste. Est, eum!
+	</div>
+	
+	<div class="cont">
+		menu_3 <br>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti inventore ullam sit libero provident, voluptatibus explicabo nam ratione quibusdam repudiandae similique dignissimos commodi reprehenderit. Doloremque temporibus et asperiores excepturi tempora!
+	</div>
+	
+	<div class="cont">
+		menu_4 <br>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nihil veritatis id error labore dicta numquam sequi perferendis iusto corrupti nulla aspernatur similique reiciendis minus neque esse nam repellat quidem.
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {	
+	var tabmenu = $('.tabmenu .menu li');
+	var tabcont = $('.tabmenu .cont');
+
+	tabClick(tabmenu, tabcont);
+	$('.tabmenu .menu li:nth-child(1)').addClass('on')
+	tabcont.eq(0).show();
+
+});
+</script>
+
+</body>
+</html>

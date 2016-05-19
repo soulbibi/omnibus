@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>Scrollbars</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<!-- css -->
+<style style="text/css">
+html{font-size:13px}
+h2{padding:30px 0 15px;font-size:18px;font-weight:bold;text-align:center;color:#000bb9}
+h3{padding:15px 0;font-size:16px;font-weight:bold;text-align:center;color:#000bb9}
+.des{padding:0 10px}
+.des ul{max-width:640px;margin:0 auto 20px;padding:10px;border:1px solid #ddd;border-radius:3px;color:#000bb9}
+.des li:before{content: '∙ '}
+.des li{text-indent:-10px;padding-left:10px}
+/* scrollbars style */
+.wrap{max-width:640px;margin:0 auto;padding:0 10px;overflow:hidden}
+.default,.bx{float:left;margin:15px 10px;width:80px;height:200px;background:#efefef;overflow-y:scroll}
+.bx{-webkit-overflow-scrolling:auto}
+.scrollbar{min-height:350px}
+/* Style_00 */
+#style_00::-webkit-scrollbar-track{
+	background-color: #fbfbfb;	
+}
+#style_00::-webkit-scrollbar{
+	width:14px;
+}
+#style_00::-webkit-scrollbar-thumb{
+	border-radius: 7px;
+	background-color: #c0c0c0;
+	border:3px solid #fff;	
+}
+/* Style_01 */
+#style_01::-webkit-scrollbar-track{
+	border-left:1px solid #ededed;
+	border-right:1px solid #ededed;
+	background-color: #fbfbfb;
+}
+#style_01::-webkit-scrollbar{
+	width: 8px;
+	background-color: #ff6a13;
+}
+#style_01::-webkit-scrollbar-thumb{
+	border-radius: 4px;
+	background-color: #ff6a13;
+}
+/* Style_02 */
+#style_02::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+#style_02::-webkit-scrollbar{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+#style_02::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ff6a13;
+}
+/* Style_03 */
+#style_03::-webkit-scrollbar-track{	
+	border:1px solid #000;
+	background-color: #F5F5F5;
+}
+#style_03::-webkit-scrollbar{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+#style_03::-webkit-scrollbar-thumb{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #000;
+}
+/* Style_04 */
+#style_04::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+#style_04::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_04::-webkit-scrollbar-thumb{
+	background-color: #000;
+	border:2px solid #555;
+}
+/* Style_05 */
+#style_05::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+#style_05::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_05::-webkit-scrollbar-thumb{
+	background: #ffb76b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffb76b 0%, #ffb76b 50%, #ff6a13 51%, #ff6a13 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #ffb76b 0%,#ffb76b 50%,#ff6a13 51%,#ff6a13 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #ffb76b 0%,#ffb76b 50%,#ff6a13 51%,#ff6a13 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+/* Style_06 */
+#style_06::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+#style_06::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_06::-webkit-scrollbar-thumb{	
+	background-color: #ff6a13; /* Old browsers */
+	background-image: -moz-linear-gradient(top, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent);
+	background-image: -webkit-linear-gradient(top, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent); /* Chrome10-25,Safari5.1-6 */
+	background-image: linear-gradient(to bottom, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent);
+}
+/* Style_07 */
+#style_07::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius:10px;
+}
+#style_07::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_07::-webkit-scrollbar-thumb{	
+	border-radius:10px;
+	background-color: #ff6a13; /* Old browsers */
+	background-image: -moz-linear-gradient(top, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent);
+	background-image: -webkit-linear-gradient(top, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent); /* Chrome10-25,Safari5.1-6 */
+	background-image: linear-gradient(to bottom, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent);
+}
+/* Style_08 */
+#style_08::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+#style_08::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_08::-webkit-scrollbar-thumb{	
+	background-color: #ff6a13; /* Old browsers */
+	background-image: -moz-linear-gradient(left, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent);
+	background-image: -webkit-linear-gradient(left, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent); /* Chrome10-25,Safari5.1-6 */
+	background-image: linear-gradient(to right, #ffb76b 25%,transparent 25%, transparent 50%,#ffb76b 50%,#ffb76b 75%,transparent 75%, transparent);
+}
+/* Style_09 */
+#style_09::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+#style_09::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_09::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background: #ffb76b;
+	background: -moz-linear-gradient(-45deg,  #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(-45deg,  #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+/* Style_10 */
+#style_10::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+#style_10::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_10::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background: #ffb76b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffb76b 1%, #ff6a13 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #ffb76b 1%,#ff6a13 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #ffb76b 1%,#ff6a13 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+/* Style_11 */
+#style_11::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+#style_11::-webkit-scrollbar{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+#style_11::-webkit-scrollbar-thumb{
+	background-color: #ff6a13; /* Old browsers */	
+	background: #f6e6b4; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ff6a13 0%, #f6e6b4 25%, #ff6a13 50%, #f6e6b4 75%, #ff6a13 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #ff6a13 0%,#f6e6b4 25%,#ff6a13 50%,#f6e6b4 75%,#ff6a13 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #ff6a13 0%,#f6e6b4 25%,#ff6a13 50%,#f6e6b4 75%,#ff6a13 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+/* Style_12 */
+#style_12::-webkit-scrollbar-track{
+	width:4px;
+	border:3px solid #fff;
+	background:#ddd;
+}
+#style_12::-webkit-scrollbar{
+	width: 10px;
+}
+#style_12::-webkit-scrollbar-thumb{
+	background-color: rgba(0, 0, 0, .3);
+	border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Scrollbars</h2>
+<div class="des">
+	<ul>
+		<li>Chrome, Safari용 스크롤바 꾸미기 </li>
+		<li><b>Default :</b> -webkit-overflow-scrolling 적용.</li>
+		<li><b>style00 ~ style12 : </b>-webkit-scrollbar-track, -webkit-scrollbar, -webkit-scrollbar-thumb 속성 적용</li>
+		<li>-webkit-overflow-scrolling 과 혼용해서 사용하지 못함. 따라서 가속도 스크롤링이 적용안됨.</li>
+	</ul>
+</div>
+<div class="wrap">
+	<div class="default">
+		<div class="scrollbar">Default</div>
+	</div>
+	<div class="bx" id="style_00">
+		<div class="scrollbar">style_00</div>
+	</div>
+	<div class="bx" id="style_01">
+		<div class="scrollbar">style_01</div>
+	</div>
+	<div class="bx" id="style_02">
+		<div class="scrollbar">style_02</div>
+	</div>
+	<div class="bx" id="style_03">
+		<div class="scrollbar">style_03</div>
+	</div>
+	<div class="bx" id="style_04">
+		<div class="scrollbar">style_04</div>
+	</div>
+	<div class="bx" id="style_05">
+		<div class="scrollbar">style_05</div>
+	</div>
+	<div class="bx" id="style_06">
+		<div class="scrollbar">style_06</div>
+	</div>
+	<div class="bx" id="style_07">
+		<div class="scrollbar">style_07</div>
+	</div>
+	<div class="bx" id="style_08">
+		<div class="scrollbar">style_08</div>
+	</div>
+	<div class="bx" id="style_09">
+		<div class="scrollbar">style_09</div>
+	</div>
+	<div class="bx" id="style_10">
+		<div class="scrollbar">style_10</div>
+	</div>
+	<div class="bx" id="style_11">
+		<div class="scrollbar">style_11</div>
+	</div>
+	<div class="bx" id="style_12">
+		<div class="scrollbar">style_12</div>
+	</div>
+</div>
+</body>
+</html>

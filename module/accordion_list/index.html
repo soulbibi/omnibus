@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>Accordion List</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<script type="text/javascript" src="../js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../js/common_ui.js"></script>
+<!-- css -->
+<style style="text/css">
+html{font-size:13px}
+h2{padding:30px 0 15px;font-size:18px;font-weight:bold;text-align:center;color:#000bb9}
+h3{padding:15px 0;font-size:16px;font-weight:bold;text-align:center;color:#000bb9}
+.des{padding:0 10px}
+.des ul{max-width:640px;margin:0 auto 20px;padding:10px;border:1px solid #ddd;border-radius:3px;color:#000bb9}
+.des li{text-indent:-10px;padding-left:10px}
+.des li:before{content: '∙ '}
+/* accordionlist style */
+.clist{margin-bottom:10px;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9}
+.clist li .tit{border-top:1px solid #e6e6e6}
+.clist li:first-child .tit{border-top:0}
+.clist li .tit a{display:block;padding:15px 16px 14px;background:#fff url(./img/ic_aw_down.png) no-repeat 100% 48%;background-size:11px auto;background-origin:content-box;font-size:13px;color:#333}
+.clist li .tit .on{background-color:#666;background-image:url(./img/ic_aw_up.png);color:#fff}
+.clist li .tit span{display:block;padding-right:23px}
+.clist li .tit em{display:block;padding-top:2px;font-size:11px;color:#999}
+.clist li .cn{display:none;padding:20px 39px 20px 16px;border-top:1px solid #e6e6e6;background-color:#fafafa;font-size:12px;line-height:19px;color:#666}
+</style>
+</head>
+
+<body>
+<h2>Accordion List</h2>
+<div class="des">
+	<ul>
+		<li>slideToggle Effects 사용</li>
+		<li>touch event &amp; click event 사용</li>
+		<li><strong>Type_01:</strong> 클릭시 해당 콘텐츠만 보여짐.</li>
+		<li><strong>Type_02:</strong> 클릭할 때마다 콘텐츠가 펼쳐짐.</li>
+	</ul>	
+</div>
+
+<h3>Type_01</h3>
+<ul class="clist" id="type_01">
+	<li>
+		<div class="tit">
+			<a href=""><span>1. 가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>2. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>3. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>4. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>5. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>6. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>7. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>8. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>9. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>10. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+</ul>
+
+<h3>Type_02</h3>
+<ul class="clist" id="type_02">
+	<li>
+		<div class="tit">
+			<a href=""><span>1. 가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>2. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>3. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>4. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+	<li>
+		<div class="tit">
+			<a href=""><span>5. 가나다라마가나다라마가나다라마</span><em>00-00-00</em></a>
+		</div>
+		<div class="cn">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste, in expedita quis fuga voluptates delectus alias quia eveniet, deserunt consequuntur fugit fugiat mollitia assumenda iusto consectetur necessitatibus velit praesentium.
+		</div>
+	</li>
+</ul>
+
+<script>
+$(document).ready(function() {	
+	var listmenu = $('.clist .tit > a');
+	var listcont = $('.clist .cn');
+	listToggle(listmenu,listcont);
+});
+</script>
+
+</body>
+</html>
