@@ -1,2 +1,2 @@
 # soulbibi.github.com
-github pages
+http://soulbibi.github.io/omnibus/
