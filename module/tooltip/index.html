@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ko">
+<head>
+<title>Tooltip</title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="./css/hint.css">
+<script type="text/javascript" src="../js/jquery/jquery-1.11.3.min.js"></script>
+<!-- css -->
+<style style="text/css">
+html{font-size:13px}
+h2{padding:30px 0 15px;font-size:18px;font-weight:bold;text-align:center;color:#000bb9;}
+.des{padding:0 10px}
+.des ul{max-width:640px;margin:0 auto 20px;padding:10px;border:1px solid #ddd;border-radius:3px;color:#000bb9}
+.des li{text-indent:-10px;padding-left:10px}
+.des li:before{content: '∙ '}
+/* hint style */
+.wrap{max-width:640px;margin:0 auto;padding:0 10px}
+h3{padding:50px 0 10px}
+
+.btn_bx:after{display:block;clear:both;content:""}
+.btn_bx button{float:left;border:0;width:40px;height:40px;margin:0 10px;font-size:14px}
+.btn_bx button:nth-child(1){background:lightgreen}
+.btn_bx button:nth-child(2){background:orange}
+.btn_bx button:nth-child(3){background:indianred}
+.btn_bx button:nth-child(4){background:lightblue}
+.btn_bx a{float:left;width:40px;height:40px;}
+
+.txt_bx li{border-bottom:1px solid #ddd;padding:10px;}
+.txt_bx li a{display:block;width:100%;}
+.txt_bx span{display:block;width:100%;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+</style>
+</head>
+
+<body>
+<h2>Tooltip</h2>
+<div class="des">
+	<ul>
+		<li>CSS: <a href="http://kushagragour.in/lab/hint/" target="_blank">http://kushagragour.in/lab/hint/</a></li>
+		<li>Options: <br>
+			<b>Colors</b> - hint--error, hint--info, hint--warning, hint--success<br>
+			<b>Sizes</b> - hint--small, hint--medium, hint--large<br>
+			hint--always / hint--rounded / hint--no-animate / hint--bounce
+		</li>
+	</ul>	
+</div>
+
+<div class="wrap">
+
+	<h3>버튼에서의 tooltip</h3>
+
+	<div class="btn_bx">
+		<button type="button" title="추가" class="hint--bottom-right  hint--success" data-hint="내용을 추가하려면 클릭해주세요.">+</button>
+		<button type="button" title="삭제" class="hint--top-right  hint--warning" data-hint="내용을 삭제하려면 클릭해주세요.">-</button>
+		<button type="button" title="닫기" class="hint--top-left  hint--error" data-hint="팝업을 닫으려면 클릭해주세요.">x</button>
+		<button type="button" title="도움말" class="hint--bottom-left  hint--info" data-hint="더 상세한 도움말을 알고 싶으면 클릭해주세요.">?</button>
+	</div>
+
+	<h3>리스트에서의 tooltip</h3>
+	<ul class="txt_bx">
+		<li><a class="hint--top  hint--large">
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore tenetur doloremque aspernatur vitae itaque, magnam voluptate suscipit libero minima quod saepe odit recusandae velit ad quam aliquam sunt provident.</span>
+		</a></li>
+		<li><a class="hint--top-right  hint--large">
+			<span>가나다라 마바사 가나다라 마바사 입니다.가나다라 마바사 가나다라 마바사 입니다.가나다라 마바사 가나다라 마바사 입니다.가나다라 마바사 가나다라 마바사 입니다.가나다라 마바사 가나다라 마바사 입니다.가나다라 마바사 가나다라 마바사 입니다.</span>
+		</a></li>
+		<li><a class="hint--bottom-right  hint--large">
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore tenetur doloremque aspernatur vitae itaque, magnam voluptate suscipit libero minima quod saepe odit recusandae velit ad quam aliquam sunt provident.</span>
+		</a></li>
+	</ul>
+
+</div>
+<script>
+	$('.txt_bx > li > a').each(function() {
+		var listTxt = $(this).children('span').text();
+		$(this).attr('data-hint', listTxt);		
+	});
+</script>
+</body>
+</html>
